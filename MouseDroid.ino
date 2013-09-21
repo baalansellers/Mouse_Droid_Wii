@@ -82,24 +82,24 @@ void GetCommand_Wii_12YAx() {
   
   /* Audio Control */
   if (wiiremote.buttonPressed(WIIREMOTE_LEFT)) {
-    //audiodriver.play(3);
-    intercomm.SendCommand(3);
+    audiodriver.play(3);
+    //intercomm.SendCommand(3);
   }
   else if (wiiremote.buttonPressed(WIIREMOTE_RIGHT)) {
-    //audiodriver.play(1);
-    intercomm.SendCommand(1);
+    audiodriver.play(1);
+    //intercomm.SendCommand(1);
   }
   else if (wiiremote.buttonPressed(WIIREMOTE_DOWN)) {
-    //audiodriver.play(2);
-    intercomm.SendCommand(2);
+    audiodriver.play(2);
+    //intercomm.SendCommand(2);
   }
   else if (wiiremote.buttonPressed(WIIREMOTE_UP)) {
-    //audiodriver.play(4);
-    intercomm.SendCommand(4);
+    audiodriver.play(4);
+    //intercomm.SendCommand(4);
   }
   else if (wiiremote.buttonPressed(WIIREMOTE_MINUS)) {
-    //audiodriver.play(0);
-    intercomm.SendCommand(0);
+    audiodriver.play(0);
+    //intercomm.SendCommand(0);
   }
 }
 

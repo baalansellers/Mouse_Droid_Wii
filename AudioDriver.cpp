@@ -70,32 +70,3 @@ void AudioDriver::audioCommand(unsigned int Code) {
   digitalWrite(DI,HIGH);
   
 }
-
-void AudioDriver::sendCommand(unsigned int command) {
-  //Start bit Low level pulse.
-  digitalWrite(CLK, LOW);
-  delay(2);
-  for (unsigned int mask = 0x8000; mask > 0; mask >>= 1) {
-    //Clock low level pulse.
-    digitalWrite(CLK, LOW);
-    delayMicroseconds(50);
-    //Write data setup.
-    if (command & mask) {
-      digitalWrite(DI, HIGH);
-    }
-    else {
-      digitalWrite(DI, LOW);
-    }
-    //Write data hold.
-    delayMicroseconds(50);
-    //Clock high level pulse.
-    digitalWrite(CLK, HIGH);
-    delayMicroseconds(100);
-    if (mask>0x0001){
-      //Stop bit high level pulse.
-      delay(2);      
-    }
-  }
-  //Busy active high from last data bit latch.
-  delay(20);
-}
